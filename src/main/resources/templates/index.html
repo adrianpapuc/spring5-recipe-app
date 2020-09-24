@@ -12,11 +12,13 @@
         <thead>
             <th>ID</th>
             <th>Description</th>
+            <th>Prep Time</th>
         </thead>
         <tbody>
             <tr th:each="recipe : ${recipes}">
-                <td th:text="${recipe.id}">123</td>
+                <td th:text="${recipe.id}">123</a></td>
                 <td th:text="${recipe.description}">desc</td>
+                <td th:text="${recipe.prepTime}">prep</td>
             </tr>
         </tbody>
     </table>

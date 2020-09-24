@@ -102,7 +102,6 @@ public class RecipeBootrstrap implements ApplicationListener<ContextRefreshedEve
         guacamole.setServings(4);
         guacamole.setDificulty(Dificulty.EASY);
         Notes guacNotes = new Notes();
-        guacNotes.setRecipe(guacamole);
         guacNotes.setRecipeNotes("Be careful handling chiles if using. Wash your hands thoroughly after handling and do not touch your eyes or the area near your eyes with your hands for several hours.");
         guacamole.setNotes(guacNotes);
         guacamole.setSource("Simply Recipes");
@@ -120,14 +119,14 @@ public class RecipeBootrstrap implements ApplicationListener<ContextRefreshedEve
                 "4 Serve: Serve immediately, or if making a few hours ahead, place plastic wrap on the surface of the guacamole and press down to cover it and to prevent air reaching it. (The oxygen in the air causes oxidation which will turn the guacamole brown.) Refrigerate until ready to serve."
         );
 
-        guacamole.getIngredients().add(new Ingredient("rpie avocados", new BigDecimal(2), eachUom,guacamole));
-        guacamole.getIngredients().add(new Ingredient("Kosher salt", new BigDecimal(".5"), teaspoonUom,guacamole));
-        guacamole.getIngredients().add(new Ingredient("fresh lime juice or lemon juice", new BigDecimal(2), tablespoonUom,guacamole));
-        guacamole.getIngredients().add(new Ingredient("minced red onion or thinly sliced green onion", new BigDecimal(2), tablespoonUom,guacamole));
-        guacamole.getIngredients().add(new Ingredient("serrano chiles, stems and seeds removed, minced", new BigDecimal(2), eachUom,guacamole));
-        guacamole.getIngredients().add(new Ingredient("Cilantro", new BigDecimal(2), tablespoonUom,guacamole));
-        guacamole.getIngredients().add(new Ingredient("freshly grated black papper", new BigDecimal(2), dashUom,guacamole));
-        guacamole.getIngredients().add(new Ingredient("ripe tomato, seeds and pulp removed, chopped", new BigDecimal(".5"), eachUom,guacamole));
+        guacamole.addIngredient(new Ingredient("rpie avocados", new BigDecimal(2), eachUom));
+        guacamole.addIngredient(new Ingredient("Kosher salt", new BigDecimal(".5"), teaspoonUom));
+        guacamole.addIngredient(new Ingredient("fresh lime juice or lemon juice", new BigDecimal(2), tablespoonUom));
+        guacamole.addIngredient(new Ingredient("minced red onion or thinly sliced green onion", new BigDecimal(2), tablespoonUom));
+        guacamole.addIngredient(new Ingredient("serrano chiles, stems and seeds removed, minced", new BigDecimal(2), eachUom));
+        guacamole.addIngredient(new Ingredient("Cilantro", new BigDecimal(2), tablespoonUom));
+        guacamole.addIngredient(new Ingredient("freshly grated black papper", new BigDecimal(2), dashUom));
+        guacamole.addIngredient(new Ingredient("ripe tomato, seeds and pulp removed, chopped", new BigDecimal(".5"), eachUom));
 
         guacamole.getCategories().add(mexicanCategory);
 
@@ -142,7 +141,6 @@ public class RecipeBootrstrap implements ApplicationListener<ContextRefreshedEve
         tacos.setServings(4);
         tacos.setDificulty(Dificulty.MODERATE);
         Notes tacoNotes = new Notes();
-        tacoNotes.setRecipe(tacos);
         tacoNotes.setRecipeNotes("Look for ancho chile powder with the Mexican ingredients at your grocery store, on buy it online. (If you can't find ancho chili powder, you replace the ancho chili, the oregano, and the cumin with 2 1/2 tablespoons regular chili powder, though the flavor won't be quite the same.)");
         tacos.setNotes(tacoNotes);
         tacos.setSource("Simply Recipes");
@@ -164,16 +162,16 @@ public class RecipeBootrstrap implements ApplicationListener<ContextRefreshedEve
                 "5 Assemble the tacos: Slice the chicken into strips. On each tortilla, place a small handful of arugula. Top with chicken slices, sliced avocado, radishes, tomatoes, and onion slices. Drizzle with the thinned sour cream. Serve with lime wedges."
         );
 
-        tacos.getIngredients().add(new Ingredient("ancho chili poder", new BigDecimal(2),tablespoonUom,tacos));
-        tacos.getIngredients().add(new Ingredient("dried oregano", new BigDecimal(1),tablespoonUom,tacos));
-        tacos.getIngredients().add(new Ingredient("dried cumin", new BigDecimal(1),tablespoonUom,tacos));
-        tacos.getIngredients().add(new Ingredient("sugar", new BigDecimal(1),tablespoonUom,tacos));
-        tacos.getIngredients().add(new Ingredient("salt", new BigDecimal(".5"),tablespoonUom,tacos));
-        tacos.getIngredients().add(new Ingredient("finely chopped garlic", new BigDecimal(1),eachUom,tacos));
-        tacos.getIngredients().add(new Ingredient("finely grated orange zest", new BigDecimal(1),tablespoonUom,tacos));
-        tacos.getIngredients().add(new Ingredient("fresh-squeezed orange juice", new BigDecimal(3),tablespoonUom,tacos));
-        tacos.getIngredients().add(new Ingredient("olive oil", new BigDecimal(2),tablespoonUom,tacos));
-        tacos.getIngredients().add(new Ingredient("skinless, boneless chicken thighs", new BigDecimal("1.25"),pundsUom,tacos));
+        tacos.addIngredient(new Ingredient("ancho chili poder", new BigDecimal(2),tablespoonUom));
+        tacos.addIngredient(new Ingredient("dried oregano", new BigDecimal(1),tablespoonUom));
+        tacos.addIngredient(new Ingredient("dried cumin", new BigDecimal(1),tablespoonUom));
+        tacos.addIngredient(new Ingredient("sugar", new BigDecimal(1),tablespoonUom));
+        tacos.addIngredient(new Ingredient("salt", new BigDecimal(".5"),tablespoonUom));
+        tacos.addIngredient(new Ingredient("finely chopped garlic", new BigDecimal(1),eachUom));
+        tacos.addIngredient(new Ingredient("finely grated orange zest", new BigDecimal(1),tablespoonUom));
+        tacos.addIngredient(new Ingredient("fresh-squeezed orange juice", new BigDecimal(3),tablespoonUom));
+        tacos.addIngredient(new Ingredient("olive oil", new BigDecimal(2),tablespoonUom));
+        tacos.addIngredient(new Ingredient("skinless, boneless chicken thighs", new BigDecimal("1.25"),pundsUom));
 
         tacos.getCategories().add(mexicanCategory);
         tacos.getCategories().add(americanCategory);
