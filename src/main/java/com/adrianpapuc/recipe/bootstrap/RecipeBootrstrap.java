@@ -5,16 +5,18 @@ import com.adrianpapuc.recipe.domain.*;
 import com.adrianpapuc.recipe.repositories.CategoryRepository;
 import com.adrianpapuc.recipe.repositories.RecipeRepository;
 import com.adrianpapuc.recipe.repositories.UnitOfMeasureRepository;
-import org.springframework.context.ApplicationContext;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Component
 public class RecipeBootrstrap implements ApplicationListener<ContextRefreshedEvent> {
     private CategoryRepository categoryRepository;
@@ -28,6 +30,7 @@ public class RecipeBootrstrap implements ApplicationListener<ContextRefreshedEve
     }
 
     @Override
+    @Transactional
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         recipeRepository.saveAll(getRecipes());
     }
@@ -131,6 +134,7 @@ public class RecipeBootrstrap implements ApplicationListener<ContextRefreshedEve
         guacamole.getCategories().add(mexicanCategory);
 
         recipes.add(guacamole);
+        log.debug("added guac");
 
         //Taco recipe
 
@@ -177,7 +181,7 @@ public class RecipeBootrstrap implements ApplicationListener<ContextRefreshedEve
         tacos.getCategories().add(americanCategory);
 
         recipes.add(tacos);
-
+        log.debug("added tacos");
 
         return recipes;
     }
