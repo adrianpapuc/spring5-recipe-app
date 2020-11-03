@@ -14,9 +14,6 @@
     <name>recipe</name>
     <description>Spring boot recipe app</description>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
 
     <dependencies>
         <dependency>
